@@ -52,25 +52,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <Container sx={{ mt: 4, mb: 4 }}>
-        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 1 }}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Discover Interactive Stories
-          </Typography>
-          <TextField
-            placeholder="Search stories..."
-            size="small"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <Search />
-                </InputAdornment>
-              ),
-            }}
-            sx={{ width: "300px" }}
-          />
-        </Box>
+        
 
         {loading ? (
           <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>

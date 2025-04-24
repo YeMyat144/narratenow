@@ -40,10 +40,7 @@ export default function Navbar() {
     async function getProfile() {
       if (user) {
         const { data, error } = await supabase.from("profiles").select("*").eq("id", user.id).single()
-
-        if (!error && data) {
-          setProfile(data)
-        }
+        if (!error && data) setProfile(data)
       }
     }
 
@@ -54,13 +51,8 @@ export default function Navbar() {
     setAnchorEl(event.currentTarget)
   }
 
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
-  }
+  const handleClose = () => setAnchorEl(null)
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen)
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
@@ -69,7 +61,7 @@ export default function Navbar() {
   }
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         NarrateNow
       </Typography>
@@ -174,13 +166,19 @@ export default function Navbar() {
 
           {!isMobile && (
             <Box sx={{ display: "flex", mx: 2 }}>
-              <Button color="inherit" component={Link} href="/">
+              <Button color="inherit" component={Link} href="/" sx={{ color: "white" }}>
                 Home
               </Button>
-              <Button color="inherit" component={Link} href="/browse">
+              <Button color="inherit" component={Link} href="/browse" sx={{ color: "white" }}>
                 Browse
               </Button>
-              <Button color="inherit" component={Link} href="/create" startIcon={<Create />}>
+              <Button
+                color="inherit"
+                component={Link}
+                href="/create"
+                startIcon={<Create />}
+                sx={{ color: "white" }}
+              >
                 Create
               </Button>
             </Box>
@@ -191,10 +189,21 @@ export default function Navbar() {
           {!user
             ? !isMobile && (
                 <Box>
-                  <Button color="inherit" component={Link} href="/signin">
+                  <Button color="inherit" component={Link} href="/signin" sx={{ color: "white" }}>
                     Sign In
                   </Button>
-                  <Button variant="contained" color="primary" component={Link} href="/signup" sx={{ ml: 1 }}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    component={Link}
+                    href="/signup"
+                    sx={{
+                      ml: 1,
+                      color: "white",
+                      "&:active": { color: "white" },
+                      "&:focus": { color: "white" },
+                    }}
+                  >
                     Sign Up
                   </Button>
                 </Box>
@@ -263,7 +272,7 @@ export default function Navbar() {
         open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
-          keepMounted: true, // Better open performance on mobile
+          keepMounted: true,
         }}
         sx={{
           display: { xs: "block", md: "none" },
