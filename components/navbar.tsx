@@ -145,19 +145,17 @@ export default function Navbar() {
               <MenuIcon />
             </IconButton>
           )}
-          <Typography
-            variant="h6"
-            component={Link}
-            href="/"
-            sx={{
-              textDecoration: "none",
-              color: "inherit",
-              fontWeight: 700,
-              flexGrow: isMobile ? 0 : 1,
-            }}
-          >
-            NarrateNow
-          </Typography>
+          <Link href="/" style={{ flexGrow: isMobile ? 0 : 1 }}>
+            <img
+              src="/logo1.png"
+              alt="NarrateNow Logo"
+              style={{
+                height: 40,
+                objectFit: 'contain',
+                cursor: 'pointer',
+                }}
+            />
+          </Link>
 
           {!isMobile && (
             <Box sx={{ display: "flex" }}>
