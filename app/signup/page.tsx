@@ -172,8 +172,8 @@ export default function SignUp() {
 
   return (
     <Container maxWidth="sm">
-      <Box sx={{ mt: 8, mb: 8 }}>
-        <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
+      <Box>
+        <Paper elevation={3} sx={{ p: 4, borderRadius: 2,  mt: 2,backgroundColor: "background.default"  }}>
           <Box sx={{ textAlign: "center", mb: 3 }}>
             <Typography component="h1" variant="h4" gutterBottom>
               Create an Account

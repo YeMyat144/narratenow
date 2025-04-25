@@ -72,8 +72,8 @@ export default function SignIn() {
 
   return (
     <Container maxWidth="sm">
-      <Box sx={{ mt: 8, mb: 8 }}>
-        <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
+      <Box >
+        <Paper elevation={3} sx={{ p: 4, borderRadius: 2, mt: 4,backgroundColor: "background.default" }}>
           <Box sx={{ textAlign: "center", mb: 3 }}>
             <Typography component="h1" variant="h4" gutterBottom>
               Welcome Back
@@ -133,13 +133,7 @@ export default function SignIn() {
             </Button>
           </form>
 
-          <Box sx={{ mt: 2, mb: 2 }}>
-            <Typography variant="body2" align="center">
-              <Link href="/forgot-password" style={{ textDecoration: "none", color: "primary.main" }}>
-                Forgot password?
-              </Link>
-            </Typography>
-          </Box>
+          
 
           <Divider sx={{ my: 3 }}>
             <Typography variant="body2" color="text.secondary">

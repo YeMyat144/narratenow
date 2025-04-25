@@ -1,9 +1,8 @@
-// app/layout.tsx
-
 import type { ReactNode } from 'react'
 import ClientLayout from './client-layout'
 
 export const metadata = {
+  title: 'NarrateNow', 
   generator: 'v0.dev',
 }
 

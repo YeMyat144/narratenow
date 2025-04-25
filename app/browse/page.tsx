@@ -179,6 +179,7 @@ export default function BrowsePage() {
                       variant="body2"
                       color="white"
                       sx={{
+                        mt: 3,
                         overflow: "hidden",
                         textOverflow: "ellipsis",
                         display: "-webkit-box",

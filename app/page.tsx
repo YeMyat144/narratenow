@@ -94,7 +94,7 @@ export default function HomePage() {
                     <Typography gutterBottom variant="h6" component="div" noWrap color="white">
                       {story.title}
                     </Typography>
-                    <Typography variant="body2" color="#cccccc" sx={{ mb: 1 }}>
+                    <Typography variant="body2" color="#cccccc" sx={{ mb: 3 }}>
                       By {story.profiles?.username || "Anonymous"}
                     </Typography>
                     <Typography
