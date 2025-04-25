@@ -15,7 +15,6 @@ import {
   TextField,
   InputAdornment,
 } from "@mui/material"
-import { Search } from "@mui/icons-material"
 import HeroSection from "@/components/hero-section"
 import type { Story } from "@/types/supabase"
 
@@ -74,13 +73,12 @@ export default function HomePage() {
               <Card
                 key={story.id}
                 sx={{
-                  height: "100%",
+                  backgroundColor: "error.main",
                   display: "flex",
                   flexDirection: "column",
                   transition: "transform 0.2s",
                   "&:hover": {
-                    transform: "translateY(-4px)",
-                    boxShadow: 6,
+                    transform: "translateY(-2px)",
                   },
                   maxWidth: "280px",
                 }}
@@ -93,15 +91,15 @@ export default function HomePage() {
                     alt={story.title}
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h6" component="div" noWrap>
+                    <Typography gutterBottom variant="h6" component="div" noWrap color="white">
                       {story.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                    <Typography variant="body2" color="#cccccc" sx={{ mb: 1 }}>
                       By {story.profiles?.username || "Anonymous"}
                     </Typography>
                     <Typography
                       variant="body2"
-                      color="text.secondary"
+                      color="white"
                       sx={{
                         overflow: "hidden",
                         textOverflow: "ellipsis",
@@ -119,7 +117,7 @@ export default function HomePage() {
 
             {filteredStories.length === 0 && (
               <Box sx={{ width: "100%", textAlign: "center", py: 8 }}>
-                <Typography variant="h6" color="text.secondary">
+                <Typography variant="h6" color="white">
                   No stories found. Be the first to create one!
                 </Typography>
               </Box>

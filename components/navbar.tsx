@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, type MouseEvent } from "react"
+import { usePathname } from "next/navigation"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { useSupabase } from "@/lib/supabase-provider"
@@ -29,6 +30,14 @@ import type { Profile } from "@/types/supabase"
 
 export default function Navbar() {
   const router = useRouter()
+  const pathname = usePathname();
+
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Story", href: "/browse" },
+    { label: "Create", href: "/create" },
+  ];
+
   const { supabase, user } = useSupabase()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -62,32 +71,22 @@ export default function Navbar() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        NarrateNow
-      </Typography>
-      <Divider />
       <List>
         <ListItem disablePadding>
           <ListItemButton component={Link} href="/">
-            <ListItemIcon>
-              <Home />
-            </ListItemIcon>
-            <ListItemText primary="Home" />
+            
+            <ListItemText primary="Home"/>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton component={Link} href="/browse">
-            <ListItemIcon>
-              <Explore />
-            </ListItemIcon>
-            <ListItemText primary="Browse" />
+            
+            <ListItemText primary="Story" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton component={Link} href="/create">
-            <ListItemIcon>
-              <Create />
-            </ListItemIcon>
+            
             <ListItemText primary="Create" />
           </ListItemButton>
         </ListItem>
@@ -95,17 +94,13 @@ export default function Navbar() {
           <>
             <ListItem disablePadding>
               <ListItemButton component={Link} href="/signin">
-                <ListItemIcon>
-                  <Login />
-                </ListItemIcon>
+                
                 <ListItemText primary="Sign In" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton component={Link} href="/signup">
-                <ListItemIcon>
-                  <PersonAdd />
-                </ListItemIcon>
+                
                 <ListItemText primary="Sign Up" />
               </ListItemButton>
             </ListItem>
@@ -165,23 +160,21 @@ export default function Navbar() {
           </Typography>
 
           {!isMobile && (
-            <Box sx={{ display: "flex", mx: 2 }}>
-              <Button color="inherit" component={Link} href="/" sx={{ color: "white" }}>
-                Home
-              </Button>
-              <Button color="inherit" component={Link} href="/browse" sx={{ color: "white" }}>
-                Browse
-              </Button>
+            <Box sx={{ display: "flex" }}>
+            {navItems.map((item) => (
               <Button
-                color="inherit"
+                key={item.href}
                 component={Link}
-                href="/create"
-                startIcon={<Create />}
-                sx={{ color: "white" }}
+                href={item.href}
+                sx={{
+                  color: pathname === item.href ? "secondary.main" : "white",
+                  fontWeight: pathname === item.href ? "bold" : "normal",
+                }}
               >
-                Create
+                {item.label}
               </Button>
-            </Box>
+            ))}
+          </Box>
           )}
 
           <Box sx={{ flexGrow: isMobile ? 1 : 0 }} />
@@ -276,7 +269,7 @@ export default function Navbar() {
         }}
         sx={{
           display: { xs: "block", md: "none" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: 140 },
         }}
       >
         {drawer}

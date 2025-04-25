@@ -80,7 +80,7 @@ export default function BrowsePage() {
   }
 
   return (
-    <Container maxWidth="lg" sx={{ py: 6 }}>
+    <Container maxWidth="lg" sx={{ py: 4}}>
       <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mb: 4, alignItems: "center" }}>
         <TextField
           placeholder="Search stories..."
@@ -109,7 +109,7 @@ export default function BrowsePage() {
           >
             <MenuItem value="newest">Newest</MenuItem>
             <MenuItem value="oldest">Oldest</MenuItem>
-            <MenuItem value="popular">Popular</MenuItem>
+            {/* <MenuItem value="popular">Popular</MenuItem> */}
           </Select>
         </FormControl>
       </Box>
@@ -135,13 +135,12 @@ export default function BrowsePage() {
               <Card
                 key={story.id}
                 sx={{
-                  height: "100%",
+                  backgroundColor: "error.main",
                   display: "flex",
                   flexDirection: "column",
                   transition: "transform 0.2s",
                   "&:hover": {
-                    transform: "translateY(-4px)",
-                    boxShadow: 6,
+                    transform: "translateY(-2px)",
                   },
                 }}
               >
@@ -154,15 +153,15 @@ export default function BrowsePage() {
                   />
                   <CardContent>
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                      <Typography gutterBottom variant="h6" component="div" noWrap>
+                      <Typography gutterBottom variant="h6" component="div" noWrap color="white">
                         {story.title}
                       </Typography>
-                      <Chip
+                      {/* <Chip
                         icon={<Favorite fontSize="small" />}
                         label={story.story_likes?.length || 0}
                         size="small"
                         variant="outlined"
-                      />
+                      /> */}
                     </Box>
 
                     <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
@@ -171,14 +170,14 @@ export default function BrowsePage() {
                         alt={story.profiles?.username || "Author"}
                         sx={{ width: 24, height: 24, mr: 1 }}
                       />
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" color="#cccccc" >
                         {story.profiles?.username || "Anonymous"}
                       </Typography>
                     </Box>
 
                     <Typography
                       variant="body2"
-                      color="text.secondary"
+                      color="white"
                       sx={{
                         overflow: "hidden",
                         textOverflow: "ellipsis",
@@ -197,7 +196,7 @@ export default function BrowsePage() {
 
           {filteredStories.length === 0 && (
             <Box sx={{ width: "100%", textAlign: "center", py: 8 }}>
-              <Typography variant="h6" color="text.secondary">
+              <Typography variant="h6" color="white">
                 No stories found. Try a different search term.
               </Typography>
             </Box>

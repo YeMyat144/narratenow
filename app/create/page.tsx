@@ -242,7 +242,7 @@ export default function CreateStory() {
     switch (step) {
       case 0:
         return (
-          <Box component="form" noValidate sx={{ mt: 3 }}>
+          <Box component="form" noValidate >
   <Stack spacing={3}>
     {/* Title */}
     <Box>
@@ -381,7 +381,7 @@ export default function CreateStory() {
             </Alert>
           )}
 
-          <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+          <Stepper activeStep={activeStep} sx={{ pt: 3, mb: 5 }}>
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>

@@ -118,7 +118,7 @@ export default function MyStoriesPage() {
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
       <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="h5" component="h1" sx={{fontWeight:'600', color:'primary.main'}} gutterBottom>
           My Stories
         </Typography>
         <Button variant="contained" color="secondary" sx={{color: "info.main"}} startIcon={<Add />} onClick={() => router.push("/create")}>
@@ -195,7 +195,7 @@ export default function MyStoriesPage() {
                   {story.description || "No description provided."}
                 </Typography>
 
-                <Box sx={{ display: "flex", gap: 1 }}>
+                {/* <Box sx={{ display: "flex", gap: 1 }}>
                   <Chip
                     icon={<Visibility fontSize="small" />}
                     label={story.view_count || 0}
@@ -208,7 +208,7 @@ export default function MyStoriesPage() {
                     size="small"
                     variant="outlined"
                   />
-                </Box>
+                </Box> */}
               </CardContent>
             </Card>
           ))}
@@ -218,16 +218,13 @@ export default function MyStoriesPage() {
       {/* Story Options Menu */}
       <Menu anchorEl={menuAnchorEl} open={Boolean(menuAnchorEl)} onClose={handleMenuClose}>
         <MenuItem onClick={handleViewStory}>
-          <Visibility fontSize="small" sx={{ mr: 1 }} />
-          View Story
+          <Visibility fontSize="small" />
         </MenuItem>
         <MenuItem onClick={handleEditStory}>
-          <Edit fontSize="small" sx={{ mr: 1 }} />
-          Edit Story
+          <Edit fontSize="small" />
         </MenuItem>
-        <MenuItem onClick={handleDeleteClick} sx={{ color: "error.main" }}>
-          <Delete fontSize="small" sx={{ mr: 1 }} />
-          Delete Story
+        <MenuItem onClick={handleDeleteClick} sx={{ color: "warning.main" }}>
+          <Delete fontSize="small" />
         </MenuItem>
       </Menu>
 

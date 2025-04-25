@@ -11,7 +11,6 @@ import {
   Typography,
   TextField,
   Button,
-  Paper,
   Avatar,
   Stack,
   CircularProgress,
@@ -213,15 +212,11 @@ export default function ProfilePage() {
   return (
     <Container maxWidth="md">
       <Box sx={{ mt: 8, mb: 8 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Your Profile
-        </Typography>
-
-        <Stack direction={{ xs: "column", md: "row" }} spacing={4}>
+       
+        <Stack direction={{ xs: "column", md: "row" }} spacing={1}>
   {/* Avatar Card */}
   <Box sx={{ flex: 1 }}>
-    <Card>
-      <CardContent sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    
         <Avatar
           src={profile.avatar_url}
           alt={profile.username || user?.email}
@@ -231,24 +226,20 @@ export default function ProfilePage() {
           {profile.username || user?.email}
         </Typography>
         {profile.bio && (
-          <Typography variant="body2" color="text.secondary" align="center">
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
             {profile.bio}
           </Typography>
         )}
-      </CardContent>
-      <CardActions>
-        <Button component="label" variant="outlined" startIcon={<PhotoCamera />} fullWidth>
-          Change Avatar
+      
+        <Button component="label" variant="outlined" startIcon={<PhotoCamera />} >
+          Upload
           <input type="file" hidden accept="image/*" onChange={handleAvatarChange} />
         </Button>
-      </CardActions>
-    </Card>
   </Box>
 
   {/* Profile Form */}
   <Box sx={{ flex: 2 }}>
-    <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
-      {error && (
+    {error && (
         <Alert severity="error" sx={{ mb: 3 }}>
           {error}
         </Alert>
@@ -305,7 +296,6 @@ export default function ProfilePage() {
           {saving ? <CircularProgress size={24} /> : "Save Changes"}
         </Button>
       </form>
-    </Paper>
   </Box>
 </Stack>
 
