@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NarrateNow - Interactive Storytelling App
 
-## Getting Started
+NarrateNow is a full-featured web application that allows users to create, share, and experience interactive stories where every decision shapes the narrative. Built with Next.js and Supabase, it provides a platform for creative storytelling with branching narratives.
 
-First, run the development server:
+![NarrateNow Screenshot](https://placeholder.svg?height=400&width=800)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **User Authentication**: Secure email/password and social login (Google, GitHub)
+- **Story Creation**: Intuitive story editor with branching narrative paths
+- **Story Browsing**: Discover and read stories created by other users
+- **Interactive Reading**: Make choices that affect the story outcome
+- **User Profiles**: Customizable profiles with avatars and bios
+- **Story Management**: Create, edit, and delete your stories
+- **Social Features**: Like stories and share them with others
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend**: Next.js, React, Material UI, TypeScript
+- **Backend**: Supabase (PostgreSQL, Authentication, Storage)
+- **Image Hosting**: Imgur API
+- **Deployment**: Vercel (recommended)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

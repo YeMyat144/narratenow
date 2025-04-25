@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, type MouseEvent } from "react"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -144,7 +145,6 @@ export default function Navbar() {
               <MenuIcon />
             </IconButton>
           )}
-
           <Typography
             variant="h6"
             component={Link}

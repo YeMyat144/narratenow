@@ -127,7 +127,7 @@ export default function BrowsePage() {
               gap: 3,
               "& > *": {
                 flex: "1 1 300px",
-                maxWidth: "280px",
+                maxWidth: "270px",
               },
             }}
           >

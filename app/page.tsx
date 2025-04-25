@@ -63,6 +63,7 @@ export default function HomePage() {
               display: "flex",
               flexWrap: "wrap",
               gap: 3,
+              justifyContent: "center",
               "& > *": {
                 flex: "1 1 300px",
                 maxWidth: "100%",
@@ -80,7 +81,7 @@ export default function HomePage() {
                   "&:hover": {
                     transform: "translateY(-2px)",
                   },
-                  maxWidth: "280px",
+                  maxWidth: "270px",
                 }}
               >
                 <CardActionArea onClick={() => router.push(`/story/${story.id}`)}>
