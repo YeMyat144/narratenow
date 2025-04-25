@@ -20,5 +20,5 @@ NarrateNow is a full-featured web application that allows users to create, share
 - **Frontend**: Next.js, React, Material UI, TypeScript
 - **Backend**: Supabase (PostgreSQL, Authentication, Storage)
 - **Image Hosting**: Imgur API
-- **Deployment**: Vercel (recommended)
+- **Deployment**: Vercel 
 
