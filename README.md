@@ -1,6 +1,6 @@
 # NarrateNow - Interactive Storytelling App
 
-NarrateNow is a full-featured web application that allows users to create, share, and experience interactive stories where every decision shapes the narrative. Built with Next.js and Supabase, it provides a platform for creative storytelling with branching narratives.
+NarrateNow is a full-featured web application that allows users to create, share, and experience interactive stories where every decision shapes the narrative. Built with Next.js and Supabase, it provides a platform for creative storytelling with branching narratives. Watch a showcase of the project here: [YouTube Demo](https://youtu.be/EfIbmmByEhc?si=UBx1ufT5cdPLkdNC)
 
 ![NarrateNow Screenshot](https://i.imgur.com/0kFRXUZ.png)
 
